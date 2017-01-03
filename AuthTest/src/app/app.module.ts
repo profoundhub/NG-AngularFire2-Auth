@@ -21,10 +21,10 @@ import { AppComponent }  from './app.component';
   imports: [
     AngularFireModule.initializeApp(
       {
-        apiKey: "AIzaSyCk3weREVFpOIN6pL_QVVNFRl3C3keMIRU",
-        authDomain: "angular2-auth.firebaseapp.com",
-        databaseURL: "https://angular2-auth.firebaseio.com",
-        storageBucket: "angular2-auth.appspot.com"
+        apiKey: "AIzaSyBE0_9cQ8vmZkj-ZYS0RYZcDCcif13uzdA",
+        authDomain: "course-tracker-46e40.firebaseapp.com",
+        databaseURL: "https://course-tracker-46e40.firebaseio.com",
+        storageBucket: "course-tracker-46e40.appspot.com"    
       },
       {
         //method: AuthMethods.Popup,
