@@ -1,12 +1,7 @@
+// CORE DEPS
 import { NgModule } from '@angular/core';
-
 import { BrowserModule } from '@angular/platform-browser';
-
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
-import { AppComponent } from './app.component';
-
+import { AngularFireModule, AuthMethods } from 'angularfire2';
 
 // MATERIAL DESIGN MODULES
 import { MdToolbarModule } from '@angular2-material/toolbar';
@@ -19,16 +14,29 @@ export let MD_MODULES: any = [
   MdCardModule
 ];
 
+// APP
+import { AppComponent }  from './app.component';
+
 @NgModule({
+  imports: [
+    AngularFireModule.initializeApp(
+      {
+        apiKey: "AIzaSyCk3weREVFpOIN6pL_QVVNFRl3C3keMIRU",
+        authDomain: "angular2-auth.firebaseapp.com",
+        databaseURL: "https://angular2-auth.firebaseio.com",
+        storageBucket: "angular2-auth.appspot.com"
+      },
+      {
+        //method: AuthMethods.Popup,
+        method: AuthMethods.Redirect
+      }
+    ),
+    BrowserModule,
+    ...MD_MODULES
+  ],
   declarations: [
     AppComponent
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
